@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ContactForm from '../ContactForm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
 import ContactList from '../ContactList/ContactList'
+
 import './App.css'
 
 const getInitialContakts = () => {
@@ -24,19 +25,23 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   
   
-  const handleChange = (evt) => {
-    setInputValue(evt.target.value);
-  };
+  
+  // const handleChange = (evt) => {
+  //   setInputValue(evt.target.value);
+  // };
 
-  const handleLogin = (userData) => { };
+  const handleFormSubmit = () => { };
 
-  return (
+   return (
     
     <div>
-  <h1>Phonebook</h1>
-  <ContactForm onLogin={handleLogin} />
-        <SearchBox value={inputValue} onChange={handleChange} />
-  <ContactList contacts={contacts} />
+      <h1>Phonebook</h1>
+
+      <ContactForm onFormSubmit={handleFormSubmit} />
+
+      <SearchBox value={inputValue} onChange={setInputValue} />
+
+      <ContactList contacts={contacts} />
 </div>  
   
   )

@@ -1,15 +1,16 @@
+import { useId } from "react"
 
 
 function SearchBox({ value, onChange }) {
+    const id = useId();
 
     return (
-        <>
-             <h2>Find contacts by name</h2>
-            <input type="text" value={value} onChange={onChange} />
-            
-            <div>    
-    </div>
-</>
+        <div>
+          
+            <label htmlFor={id}>Name</label>
+            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} id={id} />
+               
+</div>
     )
 } 
 

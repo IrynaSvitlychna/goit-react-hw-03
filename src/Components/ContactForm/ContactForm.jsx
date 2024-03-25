@@ -1,6 +1,7 @@
 import { useId } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from 'yup';
+ import { nanoid } from 'nanoid';
 import './ContactForm.module.css'
 
 
@@ -9,24 +10,34 @@ import './ContactForm.module.css'
      .min(3, 'Too Short!')
      .max(50, 'Too Long!')
      .required('This is required to dummy!'),
-   number: Yup.number()
-     .min(7, 'Too Short!')
-     .max(9, 'Too Long!')
-     .required('Required'),
+   number: Yup.string()
+     .min(3, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('This is required to dummy!'),
    });
 
-function ContactForm({ onFormSubmit }) {
-       
+function ContactForm({ onAdd }) {
+     
     const idName = useId();
-    const idNumber = useId();
-
+  const idNumber = useId();
+  
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    onAdd({
+      id: nanoid(10),
+      name: e.target.elements.name.value,
+      number: e.target.elements.number.value,
+    });
+    
+    e.target.reset();
+  };
    
     return (
          <Formik
-            initialValues={{ name: "", number: "" }}
+            initialValues={{ name: "", number: "", id:""}}
             validationSchema={FormSchema}
             onSubmit={(values, actions) => {
-                onFormSubmit(values);
+                handleFormSubmit(values);
                 actions.resetForm();
         }}
       >
@@ -38,7 +49,7 @@ function ContactForm({ onFormSubmit }) {
                 </div>
                 <div>
                     <label htmlFor={idNumber}>Number</label>   
-                    <Field name="number" type="tel" id={idNumber} />
+                    <Field name="number" type="text" id={idNumber} />
                     <ErrorMessage className="css.error" name="number" component="span" />
                 </div>
           

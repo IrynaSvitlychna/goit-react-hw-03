@@ -1,7 +1,7 @@
 import { BiSolidUser, BiSolidPhone } from "react-icons/bi";
 
 function Contact({ data: {name, number} }) {
-
+ 
     return (
         <>
             <BiSolidUser />

@@ -30,14 +30,19 @@ function App() {
   //   setInputValue(evt.target.value);
   // };
 
-  const handleFormSubmit = () => { };
 
-   return (
+  const addContacts = (newContact) => {
+    setContacts((prevContact) => {
+      return [...prevContact, newContact];
+    });
+  };
+   
+  return (
     
     <div>
       <h1>Phonebook</h1>
 
-      <ContactForm onFormSubmit={handleFormSubmit} />
+      <ContactForm onAdd={addContacts} />
 
       <SearchBox value={inputValue} onChange={setInputValue} />
 

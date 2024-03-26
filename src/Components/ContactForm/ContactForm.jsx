@@ -22,8 +22,7 @@ function ContactForm({ onAdd }) {
   const idNumber = useId();
   
   const handleFormSubmit = (values) => {
-    console.log(values)
-    
+      
     onAdd({
       id: nanoid(10),
       name: values.name,

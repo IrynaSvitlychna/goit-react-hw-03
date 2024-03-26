@@ -2,13 +2,13 @@ import Contact from "../Contact/Contact"
 
 
 
-function ContactList({ contacts }) {
+function ContactList({ contacts, onDelete }) {
 
     return (
         <ul className="">
             {contacts.map((contact) => (
                 <li className="" key="id">
-                   <Contact data={contact} /> 
+                   <Contact data={contact} onDelete={onDelete} /> 
               </li>
           ) ) }
 </ul>

@@ -37,6 +37,13 @@ function App() {
     });
   };
    
+  const deleteContacts = (contactId) => {
+    setContacts((prevContact) => {
+      return prevContact.filter(contact => contact.id !== contactId);
+    });
+  }
+  
+
   return (
     
     <div>
@@ -46,7 +53,7 @@ function App() {
 
       <SearchBox value={inputValue} onChange={setInputValue} />
 
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} onDelete={deleteContacts} />
 </div>  
   
   )

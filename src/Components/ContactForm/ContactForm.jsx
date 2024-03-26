@@ -22,7 +22,8 @@ function ContactForm({ onAdd }) {
   const idNumber = useId();
   
   const handleFormSubmit = (e) => {
-    e.preventDefault();
+    console.log(e)
+    
     onAdd({
       id: nanoid(10),
       name: e.target.elements.name.value,
@@ -34,7 +35,7 @@ function ContactForm({ onAdd }) {
    
     return (
          <Formik
-            initialValues={{ name: "", number: "", id:""}}
+            initialValues={{ name: "", number: ""}}
             validationSchema={FormSchema}
             onSubmit={(values, actions) => {
                 handleFormSubmit(values);

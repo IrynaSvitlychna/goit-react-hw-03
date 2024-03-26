@@ -21,16 +21,15 @@ function ContactForm({ onAdd }) {
     const idName = useId();
   const idNumber = useId();
   
-  const handleFormSubmit = (e) => {
-    console.log(e)
+  const handleFormSubmit = (values) => {
+    console.log(values)
     
     onAdd({
       id: nanoid(10),
-      name: e.target.elements.name.value,
-      number: e.target.elements.number.value,
+      name: values.name,
+      number: values.number,
     });
     
-    e.target.reset();
   };
    
     return (

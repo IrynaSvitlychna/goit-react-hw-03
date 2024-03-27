@@ -1,29 +1,16 @@
-.container {
+.containercontacts {
   width: 250px;
   height: 70px;
   border: 3px solid black;
   display: flex;
-  /* flex-direction: row; */
-
   align-items: center;
   gap: 5px;
 }
 
-.namecontainer {
+.elementscontainer {
   margin-left: 5px;
   display: flex;
   flex-direction: row;
-  /* flex-wrap: nowrap; */
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-}
-
-.numbercontainer {
-  margin-left: 5px;
-  display: flex;
-  flex-direction: row;
-  /* flex-wrap: nowrap; */
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
@@ -41,7 +28,7 @@
   height: 4px;
 }
 
-.elements {
+.container {
   display: flex;
   flex-direction: column;
 }

@@ -1,15 +1,19 @@
 import { BiSolidUser, BiSolidPhone } from "react-icons/bi";
-import './Contact.module.css';
+import css from './Contact.module.css';
 
 function Contact({ data: {name, number, id}, onDelete }) {
     console.log({name, number, id});
     return (
-        <div className="container-contact">
-            <BiSolidUser />
-            <p>{name}</p>
-            <BiSolidPhone />
-            <p>{number}</p>
-            <button onClick={() => onDelete(id)}>Delete</button>
+        <div className="css.container">
+            <div className="css.namecontainer">
+                <BiSolidUser />
+                <p className="">{name}</p>
+            </div>
+            <div className="css.numbercontainer">
+                <BiSolidPhone />
+                <p className="">{number}</p>
+            </div>
+            <button onClick={() => onDelete(id)} className="css.btn">Delete</button>
         </div>
        
     )

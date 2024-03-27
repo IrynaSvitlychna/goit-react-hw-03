@@ -40,7 +40,7 @@ function ContactForm({ onAdd }) {
                 actions.resetForm();
         }}
       >
-            <Form className="form">
+            <Form className="css.form">
                 <div>
                     <label htmlFor={idName}>Name</label>
                     <Field name="name" type="text" id={idName} />

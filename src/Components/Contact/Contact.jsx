@@ -5,7 +5,7 @@ function Contact({ data: {name, number, id}, onDelete }) {
     console.log({name, number, id});
     return (
         <div className={css.container}>
-            <div className={css.element}>
+            <div className={css.elements}>
                 <div className={css.namecontainer}>
                     <BiSolidUser />
                     <p className={css.item}>{name}</p>

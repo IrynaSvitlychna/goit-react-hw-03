@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import ContactForm from '../ContactForm/ContactForm'
-import SearchBox from '../SearchBox/SearchBox'
-import ContactList from '../ContactList/ContactList'
+import { useState } from 'react';
+import ContactForm from '../ContactForm/ContactForm';
+import SearchBox from '../SearchBox/SearchBox';
+import ContactList from '../ContactList/ContactList';
+import css from './App.module.css';
 
-import './App.css'
 
 const getInitialContakts = () => {
   
@@ -39,15 +39,17 @@ function App() {
 
   return (
     
-    <div>
-      <h1>Phonebook</h1>
-
+    <>
+      
+      <h1 className={css.title}>Phonebook</h1>
+      
       <ContactForm onAdd={addContacts} />
+  
 
       <SearchBox value={inputValue} onChange={setInputValue} />
 
       <ContactList contacts={findContacts} onDelete={deleteContacts} />
-</div>  
+</>  
   
   )
 }

@@ -1,4 +1,5 @@
 import { useId } from "react"
+import css from './SearchBox.module.css'
 
 
 function SearchBox({ value, onChange }) {
@@ -6,12 +7,12 @@ function SearchBox({ value, onChange }) {
     const id = useId();
 
     return (
-        <div>
+        <div className={css.container}>
           
-            <label htmlFor={id}>Name</label>
-            <input type="text" value={value} onChange={(e) => onChange(e.target.value)} id={id} />
+            <label htmlFor={id}>Find contacts by name</label>
+            <input className={css.input} type="text" value={value} onChange={(e) => onChange(e.target.value)} id={id} />
                
-</div>
+        </div>
     )
 } 
 

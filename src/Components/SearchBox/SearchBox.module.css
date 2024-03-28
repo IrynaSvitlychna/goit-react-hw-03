@@ -8,5 +8,9 @@
 .input {
   margin-top: 10px;
   width: 200px;
+}
+
+.input:hover,
+.input:focus {
   border: 2px solid rgb(11, 27, 208);
 }

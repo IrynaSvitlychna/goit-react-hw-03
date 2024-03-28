@@ -25,7 +25,8 @@
   top: 5px;
 }
 
-.input:hover {
+.input:hover,
+.input:focus {
   border: 2px solid rgb(11, 27, 208);
 }
 
@@ -36,7 +37,5 @@
 }
 
 .button {
-  position: absolute;
-  bottom: 40px;
   width: 150px;
 }

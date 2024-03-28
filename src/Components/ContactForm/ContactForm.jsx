@@ -43,12 +43,12 @@ function ContactForm({ onAdd }) {
         <Form className={css.form}>
                 <div className={css.list}>
                     <label className={css.label} htmlFor={idName}>Name</label>
-                    <Field name="name" type="text" id={idName} />
+                    <Field className={css.input} name="name" type="text" id={idName} />
             <ErrorMessage className={css.error} name="name" component="span" />
                 </div>
                 <div className={css.list}>
                     <label htmlFor={idNumber}>Number</label>   
-                    <Field name="number" type="text" id={idNumber} />
+                    <Field className={css.input} name="number" type="text" id={idNumber} />
             <ErrorMessage className={css.error} name="number" component="span" />
                 </div>
           

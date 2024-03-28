@@ -15,7 +15,7 @@ function Contact({ data: {name, number, id}, onDelete }) {
                     <p className={css.item}>{number}</p>
                 </div>
             </div>
-            <button onClick={() => onDelete(id)} className="css.btn">Delete</button>
+            <button onClick={() => onDelete(id)}>Delete</button>
         </div>
        
     )

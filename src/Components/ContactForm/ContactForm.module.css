@@ -25,12 +25,13 @@
 }
 
 .input:hover,
-.input:focus {
+.input:focus,
+.input:active {
   border: 2px solid rgb(11, 27, 208);
 }
 
 .error {
-  /* display: block; */
+  display: block;
   font-size: 14px;
   color: orangered;
 }

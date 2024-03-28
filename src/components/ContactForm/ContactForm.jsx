@@ -52,7 +52,7 @@ function ContactForm({ onAdd }) {
             <ErrorMessage className={css.error} name="number" component="span" />
                 </div>
           
-                <button className={css.button} type="submit">Add contact</button>
+                <button className={css.btn} type="submit">Add contact</button>
             </Form>
         </Formik>
     )

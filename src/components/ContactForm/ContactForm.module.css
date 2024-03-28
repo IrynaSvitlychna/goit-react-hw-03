@@ -36,8 +36,8 @@
   color: orangered;
 }
 
-.button {
+.btn {
   position: absolute;
-  top: 55%;
+  top: 50%;
   width: 150px;
 }

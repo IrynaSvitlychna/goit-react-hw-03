@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ContactForm from '../ContactForm/ContactForm';
 import SearchBox from '../SearchBox/SearchBox';
 import ContactList from '../ContactList/ContactList';
@@ -6,7 +6,10 @@ import css from './App.module.css';
 
 
 const getInitialContakts = () => {
-  
+   const savedKey = window.localStorage.getItem("key");
+  if (savedKey !== null) {
+    return JSON.parse(savedKey);
+  }
   return (
      [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -37,6 +40,10 @@ function App() {
   const findContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
+  useEffect(() => {
+    window.localStorage.setItem("key", JSON.stringify(contacts));
+  }, [contacts]);
+  
   return (
     
     <>
